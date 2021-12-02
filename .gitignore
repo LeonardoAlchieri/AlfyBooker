@@ -1,3 +1,5 @@
 .DS_Store
 chromedriver
 notebooks_tests/
+.vscode/
+__pycache__
