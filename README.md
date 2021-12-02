@@ -7,7 +7,7 @@ This repo contains the code for some simple webscraping+interaction. Its purpose
 
 Since this bot is a very fast-built command-line interface, I shall provide the steps to ensure a smooth functioning for non-technical users.
 
-The bot uses `Python`, so a Python installation on your computer (Linux, Mac, Windows) is required. If you do not have one, or you have the "system default" installation and have never even bothered to touch it, I suggest to install (**`Python` with Anaconda**)[https://www.anaconda.com/products/individual]. Once installed, either create a custom virtual environment ((here's)[https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html] the documentation for what they are) or use the standard one, I could not care less.
+The bot uses `Python`, so a Python installation on your computer (Linux, Mac, Windows) is required. If you do not have one, or you have the "system default" installation and have never even bothered to touch it, I suggest to install [**`Python` with Anaconda**](https://www.anaconda.com/products/individual). Once installed, either create a custom virtual environment ([here's](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) the documentation for what they are) or use the standard one, I could not care less.
 
 Once you have a somewhat working `Python` installation, it is then the time to install all of the requirements. To do so, just to `pip install -r requirements.txt` (you can find the file in the root of the repo). If 
 
