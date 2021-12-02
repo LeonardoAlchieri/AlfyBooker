@@ -11,7 +11,7 @@ The bot uses `Python`, so a Python installation on your computer (Linux, Mac, Wi
 
 Once you have a somewhat working `Python` installation, it is then the time to install all of the requirements. To do so, just to `pip install -r requirements.txt` (you can find the file in the root of the repo). If 
 
-The program also uses **Google Chrome**, and thus please install it on your machine as well. In order to have the *automation*, you are also required to install on your machine `chromedriver`. To do so, plase visit the (download page)[https://chromedriver.chromium.org/downloads] and download the `chromedriver` corresponding to your **Google Chrome** version and operating system.
+The program also uses **Google Chrome**, and thus please install it on your machine as well. In order to have the *automation*, you are also required to install on your machine `chromedriver`. To do so, plase visit the [download page](https://chromedriver.chromium.org/downloads) and download the `chromedriver` corresponding to your **Google Chrome** version and operating system.
 Once downloaded, place the `chromedriver` file in the root folder of the repo.
 
 # Manually Run
