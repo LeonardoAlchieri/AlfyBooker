@@ -2,4 +2,5 @@
 chromedriver
 notebooks_tests/
 .vscode/
+*.ipynb
 __pycache__
