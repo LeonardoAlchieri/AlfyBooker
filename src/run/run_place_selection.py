@@ -11,18 +11,18 @@ from src.utils import load_config
 
 def main():
     print('-- Starting program. Loading config.')
-    config = load_config(path=abspath('config.yml'))
+    config = load_config(path=abspath('./src/run/config.yml'))
     print('-- Config successfully loaded.')
     print('-- Plase giver username and password.')
-    username = input(__prompt='USERNAME: ')
-    password = getpass(prompt='PASSWORD: ')
+    # username = input('USERNAME: ')
+    # password = getpass(prompt='PASSWORD: ')
     chrome_options = Options()
     chrome_options.add_argument('--lang=it-it')
     driver = webdriver.Chrome(executable_path=abspath("./chromedriver"),
                               options=chrome_options)
     place_booker = PlaceBooker(driver=driver,
-                               username=username,
-                               password=password,
+                               username=config['username'],
+                               password=config['password'],
                                url=config['url'],
                                building_name=config['building_name'],
                                room_name=config['room_name'])

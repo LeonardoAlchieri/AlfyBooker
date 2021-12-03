@@ -5,7 +5,7 @@ from functools import wraps
 from random import randrange
 from selenium.webdriver.chrome.webdriver import WebDriver
 
-from src.utils import try_run_selenium_command
+# from src.utils import try_run_selenium_command
 
 class PlaceBooker():
     """This class is used to perform all of the necessary methods for the 
@@ -41,16 +41,16 @@ class PlaceBooker():
         self.driver.get(url)
         
         
-    def _select_deselect_frame(self, func: Callable):
+    def _select_deselect_frame(func: Callable):
         @wraps(func)
-        def wrapper(*args, **kwargs) -> bool:
+        def wrapper(self, *args, **kwargs) -> bool:
             self.driver.switch_to.frame(0)
-            func(*args, **kwargs)
+            func(self, *args, **kwargs)
             self.driver.switch_to.default_content()
         return wrapper
     
     # TODO: look up if double decorator is fine
-    @try_run_selenium_command
+    # @try_run_selenium_command
     @_select_deselect_frame
     def login_with_credential(self):
         """This method implements the main webpage login.
@@ -60,32 +60,35 @@ class PlaceBooker():
             frame.send_keys(message)
         login_button = self.driver.find_element_by_xpath('//*[@id="Usa_le_tue_credenziali_di_Esse"]/form/button')
         login_button.click()        
+        print('-- Login!')
         
-    @try_run_selenium_command
+    # @try_run_selenium_command
     @_select_deselect_frame
     def platform_selection(self):
         """This method is used to select the webpage for the room booking.
         """
+        print('-- Selecting booking platform')
         aule_button = self.driver.find_element_by_xpath('//*[@id="AULE"]')
         aule_button.click()
         
     @staticmethod
-    @try_run_selenium_command
+    # @try_run_selenium_command
     def find_all_available_slots(driver: WebDriver) -> List[Any]:
         return sorted([el 
                        for el in driver.find_elements_by_id('TESTO') 
                        if '/' not in el.text.split('\n')[-1]], 
                       key=lambda x: x.text)
         
-    @try_run_selenium_command
+    # @try_run_selenium_command
     @_select_deselect_frame
     def set_number_of_slots(self):
-        self.n_slots: int = sorted([el 
+        self.n_slots: int = len([el 
                                      for el in self.driver.find_elements_by_id('TESTO') 
-                                     if '/' not in el.text.split('\n')[-1]], 
-                                    key=lambda x: x.text)
+                                     if '/' not in el.text.split('\n')[-1]])
+        if self.n_slots == 0:
+            print('No slots were available. I am sorry, you were very unlucky.')
         
-    @try_run_selenium_command
+    # @try_run_selenium_command
     @_select_deselect_frame
     def _select_slot_from_idx(self, idx: int):
         slots_to_book = self.find_all_available_slots(driver=self.driver)
@@ -93,7 +96,7 @@ class PlaceBooker():
         print(f'Pressing slot:\n{slot.text}')
         slot.click()
         
-    @try_run_selenium_command
+    # @try_run_selenium_command
     @_select_deselect_frame
     def _select_building(self):
         buildings = self.driver.find_elements_by_id('EDIFICIO')
@@ -108,7 +111,7 @@ class PlaceBooker():
         else:
             raise RuntimeError(f'Could not find desired building: {self.building_name}')
         
-    @try_run_selenium_command
+    # @try_run_selenium_command
     @_select_deselect_frame
     def _select_room(self):
         wanted_slot = [slot 
@@ -127,7 +130,7 @@ class PlaceBooker():
             wanted_slot = wanted_slot[0]
         wanted_slot.click()
 
-    @try_run_selenium_command
+    # @try_run_selenium_command
     @_select_deselect_frame
     def _book(self):
         self.driver.find_element_by_id('PRENOTA').click()

@@ -25,8 +25,10 @@ and follow the instructions. If everything goes okay, you will see printed `'###
 # Create Scheduled Run
 
 Now, this is where the fun begings. The best way to have a scheduled run of a program in Unix-like systems, that is most likely *MacOS* and *Linux* is to use `cron`. To scheduled the program, just to `crontab -e` and then, in the open editor, write a new line with 
-```0 22 * * * python /path/to/AlfyBooker/src/run/run_place_selection.py```
+TODO: figure out the password and username stuff.
+```0 22 * * * script.sh```
 
-If you are using *Windows*, first off plase do not! Secondly, there is some command line tool for it, but I do not feel like learning it: see [here](https://ss64.com/nt/schtasks.html).
+If you are using *Windows*, first off plase do not! Then, see [this guide](https://datatofish.com/python-script-windows-scheduler/) on how to make a `BAT` file and run it with `Windows Scheduler`.
+If you want to use a command line tool instead, see [here](https://ss64.com/nt/schtasks.html).
 
 @Leonardo Alchieri, 2021
