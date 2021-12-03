@@ -3,4 +3,5 @@ chromedriver
 notebooks_tests/
 .vscode/
 *.ipynb
+*.yml
 __pycache__
