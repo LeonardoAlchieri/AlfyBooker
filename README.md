@@ -35,4 +35,4 @@ TODO: figure out the password and username stuff.
 If you are using *Windows*, first off plase do not! Then, see [this guide](https://datatofish.com/python-script-windows-scheduler/) on how to make a `BAT` file and run it with `Windows Scheduler`.
 If you want to use a command line tool instead, see [here](https://ss64.com/nt/schtasks.html).
 
-@Leonardo Alchieri, 2021
+@Leonardo Alchieri, 2022
