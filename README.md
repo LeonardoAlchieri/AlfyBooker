@@ -1,7 +1,11 @@
+[![Python 3.8](https://img.shields.io/badge/python-3.8-blue.svg)](https://www.python.org/downloads/release/python-380/)
+
 
 # Description
 
 This repo contains the code for some simple webscraping+interaction. Its purpose is to book automatically classes slots for the University of Trieste's web service.
+
+I have created this project for my dear friend Alfonso (he has not Github repo).
 
 # Installation Instructions
 
